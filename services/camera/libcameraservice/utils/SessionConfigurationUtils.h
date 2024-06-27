@@ -1,3 +1,4 @@
+
 /*
  * Copyright (C) 2020 The Android Open Source Project
  *
@@ -178,6 +179,10 @@ status_t mapRequestTemplateToAidl(camera_request_template_t templateId,
 
 void filterParameters(const CameraMetadata& src, const CameraMetadata& deviceInfo,
         metadata_vendor_id_t vendorTagId, CameraMetadata& dst);
+
+template <typename T> bool contains(std::set<T> container, T value) {
+    return container.find(value) != container.end();
+}
 
 constexpr int32_t MAX_SURFACES_PER_STREAM = 4;
 
